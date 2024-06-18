@@ -36,7 +36,7 @@ Create `.env` files in the client root directory and server root directory then 
 FRONTEND_URL_DEVELOPMENT=http://localhost:5000
 FRONTEND_URL_PRODUCTION=https://url-shortener-kerem.vercel.app
 PORT=3000
-MONGODB_URI=<your-mongodb-uri>
+MONGO_URI=<your-mongodb-uri>
 MONGO_URI_TEST_DB=<your-mongodb-test-uri>
 JWT_SECRET=<your-jwt-secret>
 JWT_LIFETIME=40d
@@ -45,7 +45,7 @@ JWT_LIFETIME=40d
 #### .env file in the Client
 
 ```dotenv
-VITE_API_URL=<http://localhost:3000>
+VITE_BASE_URL=<http://localhost:3000>
 ```
 
 You will receive the MongoDB URI and JWT secret via email.
