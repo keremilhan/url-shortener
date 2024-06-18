@@ -21,7 +21,7 @@ Create `.env` files in the client root directory and server root directory then 
 
 ```dotenv
 FRONTEND_URL_DEVELOPMENT=http://localhost:5000
-FRONTEND_URL_PRODUCTION=https://url-shortener-five-liart.vercel.app
+FRONTEND_URL_PRODUCTION=https://url-shortener-kerem.vercel.app
 PORT=3000
 MONGODB_URI=<your-mongodb-uri>
 MONGO_URI_TEST_DB=<your-mongodb-test-uri>
