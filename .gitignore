@@ -1,0 +1,21 @@
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+
+# Build directories
+dist/
+build/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
