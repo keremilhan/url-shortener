@@ -48,18 +48,26 @@ const limiter = rateLimit({
 
 app.set('trust proxy', 1);
 
+const allowedOrigins = [process.env.FRONTEND_URL_DEVELOPMENT, process.env.FRONTEND_URL_PRODUCTION];
+
 app.use(
     cors({
-        origin: 'http://localhost:5000',
+        origin: function (origin, callback) {
+            // allow requests with no origin (like mobile apps or curl requests)
+            if (!origin) return callback(null, true);
+            if (allowedOrigins.indexOf(origin) === -1) {
+                const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+                return callback(new Error(msg), false);
+            }
+            return callback(null, true);
+        },
         methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
         allowedHeaders: ['Content-Type', 'Authorization'],
         credentials: true,
     })
 );
-
 app.options('*', cors());
 
-app.use(express.static(path.resolve(__dirname, './client/build')));
 app.use(express.json());
 app.use(helmet());
 app.use(limiter);
