@@ -71,7 +71,10 @@ const FormInput = ({ setUrls }) => {
                 {!user && (
                     <div className="h-16 my-4">
                         {' '}
-                        <Alert type="warning" message="Customizing short URLs requires an account. Once logged in, you'll be able to personalize your short URLs to your preference." />
+                        <Alert
+                            type="warning"
+                            message="Customizing short URLs and accessing your dashboard requires an account. Once logged in, you'll be able to personalize your short URLs to your preference."
+                        />
                     </div>
                 )}
                 <div className="h-16 mb-1">{alert && <Alert type={alert.type} message={alert.message} />}</div>

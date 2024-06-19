@@ -108,6 +108,9 @@ const Home = () => {
             });
         }
     };
+    const handleIncrementClicks = id => {
+        setUrls(urls?.map(url => (url._id === id ? { ...url, clicks: url.clicks + 1 } : url)));
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -173,7 +176,13 @@ const Home = () => {
                                             onChange={handleInputChange}
                                         />
                                     ) : (
-                                        <ShortUrlCard baseUrl={baseUrl} short={url.short} handleCopyShortUrl={handleCopyShortUrl} button={'icon'} />
+                                        <ShortUrlCard
+                                            handleIncrementClicks={() => handleIncrementClicks(url._id)}
+                                            baseUrl={baseUrl}
+                                            short={url.short}
+                                            handleCopyShortUrl={handleCopyShortUrl}
+                                            button={'icon'}
+                                        />
                                     )}
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-right">

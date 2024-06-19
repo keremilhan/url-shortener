@@ -28,7 +28,7 @@ cd url-shortener
 
 ### 2. Configure Environment Variables
 
-Create `.env` files in the client root directory and server root directory then add the following variables:
+Create `.env` files in the server root directory and client root directory then add the following variables:
 
 #### .env file in the Server
 
@@ -45,7 +45,7 @@ JWT_LIFETIME=40d
 #### .env file in the Client
 
 ```dotenv
-VITE_BASE_URL=<http://localhost:3000>
+VITE_BASE_URL=http://localhost:3000
 ```
 
 You will receive the MongoDB URI and JWT secret via email.
