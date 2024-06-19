@@ -1,11 +1,18 @@
 import { FaCopy } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const ShortUrlCard = ({ baseUrl, short, handleCopyShortUrl, button }) => {
+const ShortUrlCard = ({ handleIncrementClicks = () => {}, baseUrl, short, handleCopyShortUrl, button }) => {
     const fullShort = `${baseUrl}/${short}`;
     return (
         <div className="flex flex-col sm:flex-row items-center w-fit text-md">
-            <Link to={fullShort} target="_blank" type="text" className="border border-gray-300 rounded-s p-2 w-[150px] cursor-pointer truncate">
+            <Link
+                onClick={handleIncrementClicks}
+                title="Click to open"
+                to={fullShort}
+                target="_blank"
+                type="text"
+                className="border border-gray-300 rounded-s p-2 w-[150px] cursor-pointer truncate hover:bg-gray-400"
+            >
                 {short}
             </Link>
             <button

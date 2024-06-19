@@ -5,7 +5,7 @@ import { Link, useNavigate, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const { name } = useAppSelector(selectAuth);
-    const navigation = [{ text: 'Home', href: '/' }];
+    const navigation = [{ text: 'Dashboard', href: '/' }];
 
     const [isOpen, setIsOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
